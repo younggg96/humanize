@@ -42,6 +42,11 @@ class HumanizeResponse(BaseModel):
     paragraphs: list[ParagraphMapping]
 
 
+@app.get("/")
+async def root():
+    return {"service": "Humanize API", "version": "1.0.0", "status": "ok"}
+
+
 @app.get("/health")
 async def health():
     return {"status": "ok"}
